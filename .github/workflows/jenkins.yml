@@ -1,0 +1,27 @@
+name: Test Jenkins Action
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [closed]
+
+
+jobs:
+
+  testaction:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      
+      - id: testjenkinsaction
+        uses: mickeygoussetorg/trigger-jenkins-job@v1
+        with:
+          jenkins-server: http://3.7.254.1:8080/
+          jenkins-job: test-pv
+          jenkins-username: admin
+          jenkins-pat: 113ff1eb8d252ede25d27fe7c479eee34e
+          poll-time: 60
+          timeout-value: 60
+          verbose: true
