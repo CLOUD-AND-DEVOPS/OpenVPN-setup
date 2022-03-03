@@ -6,3 +6,5 @@ chmod +x openvpn-install.sh
 
 # Run the script
 sudo /bin/bash openvpn-install.sh
+
+#s
